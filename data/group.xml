@@ -1,0 +1,9 @@
+<odoo>
+	<data>
+
+		<record id="group_manager" model="res.groups">
+			<field name="name">Convert / Manager</field>
+		</record>
+
+	</data>
+</odoo>

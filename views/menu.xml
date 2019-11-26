@@ -1,0 +1,25 @@
+<odoo>
+	<data>
+		
+		<record id="action_import_list" model="ir.actions.act_window">
+            <field name="name">Import Tagihan</field>
+            <field name="res_model">convert_invoice.convert_invoice</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create"> Click to create a Import </p>
+                <p>klik tombol create untuk bikin Import baru</p>
+            </field>
+        </record>
+
+        <menuitem id="import_0"
+        name="Import Tagihan"
+        sequence="20"/>
+
+        <menuitem id="import_1"
+        name="Import Tagihan"
+        parent="import_0"
+        action="action_import_list"
+        sequence="20"/>
+        
+	</data>
+</odoo>
