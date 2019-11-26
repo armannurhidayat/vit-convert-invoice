@@ -1,19 +1,69 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="convert_invoice.list">
-      <field name="name">convert_invoice list</field>
+    
+    <record id="view_import_tagihan_form" model="ir.ui.view">
+      <field name="name">convert_invoice.convert_invoice.form</field>
       <field name="model">convert_invoice.convert_invoice</field>
+      <field name="type">form</field>
+      <field name="priority" eval="8"/>
+
       <field name="arch" type="xml">
-        <tree>
+        <form string="Import">
+          <header>
+            <button string="Convert" class="btn-primary" type="button" />
+          </header>
+
+          <sheet>
+            <div class="oe_title">
+              <label for="name" class="oe_edit_only" string="Nama Debitur"/>
+              <h1>
+                <field name="name"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="peminjam" />
+                <field name="bunga_peminjam" />
+                <field name="jangka_waktu" />
+                <field name="tgl_pencairan" />
+                <field name="priode_pinjaman" />
+                <field name="mulai_pembayaran" />
+              </group>
+              <group>
+                <field name="bulan" />
+                <field name="periode" />
+                <field name="saldo_awal" />
+                <field name="pokok" />
+                <field name="bunga" />
+                <field name="saldo_akhir" />
+                <field name="status" />
+                <field name="tanggal" />
+                <field name="is_invoce" />
+              </group>
+            </group>
+          </sheet>
+          
+        </form>
+      </field>
+    </record>
+
+
+    <record id="view_import_tagihan_tree" model="ir.ui.view">
+      <field name="name">convert_invoice.convert_invoice.tree</field>
+      <field name="model">convert_invoice.convert_invoice</field>
+      <field name="type">tree</field>
+      <field name="priority" eval="8"/>
+
+      <field name="arch" type="xml">
+        <tree string="Import">
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="peminjam"/>
+          <field name="bunga_peminjam" />
+          <field name="periode" />
+          <field name="status" />
         </tree>
       </field>
     </record>
-    -->
 
     <!-- actions opening views on models -->
     <!--

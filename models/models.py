@@ -6,7 +6,7 @@ import time
 class Import(models.Model):
     _name = 'convert_invoice.convert_invoice'
 
-    debitur = fields.Char(
+    name = fields.Char(
         string='Nama Debitur',
         required=True,
     )
@@ -33,8 +33,8 @@ class Import(models.Model):
     bulan = fields.Integer(
         string='Bulan',
     )
-    priode = fields.Date(
-        string='Priode'
+    periode = fields.Date(
+        string='Periode'
     )
     saldo_awal = fields.Float(
         string='Saldo Awal',
