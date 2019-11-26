@@ -10,7 +10,7 @@
       <field name="arch" type="xml">
         <form string="Import">
           <header>
-            <button string="Convert" class="btn-primary" type="button" />
+            <button string="Convert" class="btn-primary" type="object" name="convert_invoice" /> <!-- Name= fungsi -->
           </header>
 
           <sheet>
@@ -38,7 +38,7 @@
                 <field name="saldo_akhir" />
                 <field name="status" />
                 <field name="tanggal" />
-                <field name="is_invoce" />
+                <field name="is_invoice" />
               </group>
             </group>
           </sheet>

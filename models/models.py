@@ -43,7 +43,7 @@ class Import(models.Model):
         string='Pokok',
     )
     bunga = fields.Float(
-        string='Field Label',
+        string='Bunga',
     )
     saldo_akhir = fields.Float(
         string='Saldo Akhir',
@@ -55,6 +55,40 @@ class Import(models.Model):
         string='Tanggal',
         default=lambda self:time.strftime("%Y-%m-%d")
     )
-    is_invoce = fields.Boolean(
+    is_invoice = fields.Boolean(
         string='Is Invoice',
     )
+
+    @api.model
+    def convert_invoice(self, values):
+        # Mengambil Object
+        object_convert = self.env['convert_invoice.convert_invoice']
+        object_invoice = self.env['account.invoice']
+        object_partner = self.env['res.partner']
+        object_account = self.env['account.account']
+        object_product = self.env['account.account']
+
+        # Search record pada object
+        records = object_convert.search([('status', '=', 'OPEN'),('is_invoice', '=', False)]) # kondisi search
+
+        for record in records:
+            partner_id = object_partner.search([('name', '=', record.name)])
+            account_id = object_account.search([('code', '=', '101200')])
+            product_id = object_product.search([('code', '=', '101200')])
+
+            date_invoice = record.periode
+
+            invoice_line_ids = [(0,0,{
+                'id_product':'cicilan',
+                'name':'cicilan',
+                'quantity': 1,
+                'price_unit': record.pokok,
+                'account_id': account_id.id,
+                })]
+
+            data = {
+                'partner_id'        : partner_id.id,
+                'date_invoice'      : date_invoice,
+                'invoice_line_ids'  : invoice_line_ids
+            }
+            object_invoice.create(data)
