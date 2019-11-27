@@ -61,6 +61,7 @@
           <field name="bunga_peminjam" />
           <field name="periode" />
           <field name="status" />
+          <field name="is_invoice" />
         </tree>
       </field>
     </record>
