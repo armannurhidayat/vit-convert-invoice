@@ -87,8 +87,9 @@ class Import(models.Model):
             })]
 
             data = {
-                'partner_id'        : partner_id.id,
-                'date_invoice'      : record.periode,
-                'invoice_line_ids'  : invoice_line_ids,
+                'partner_id'      : partner_id.id,
+                'date_invoice'    : record.periode,
+                'invoice_line_ids': invoice_line_ids,
             }
             object_invoice.create(data)
+            record.is_invoice=True
