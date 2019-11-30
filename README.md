@@ -8,6 +8,7 @@
 
 ![Screenshot from 2019-11-27 14-52-15](https://user-images.githubusercontent.com/43681671/69704226-9802bd80-1125-11ea-82b0-02c43d26c9a8.png)
 
-https://github.com/KejawenLab/SemartHris/blob/master/preview/preview2.png
+![Screenshot from 2019-11-27 14-52-15](https://github.com/KejawenLab/SemartHris/blob/master/preview/preview2.png)
+
 
 Addons untuk menconvert invoice
