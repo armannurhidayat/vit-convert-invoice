@@ -66,7 +66,7 @@ class Import(models.Model):
         object_convert = self.env['convert_invoice.convert_invoice']
         object_invoice = self.env['account.invoice']
         object_partner = self.env['res.partner']
-        object_account = self.env['account.account']
+        object_account = self.env['account.account'] #COA
         object_product = self.env['product.product']
 
         # Search record pada object
@@ -75,17 +75,14 @@ class Import(models.Model):
         for record in records:
             partner_id = object_partner.search([('name', '=', record.name)])
             account_id = object_account.search([('code', '=', '101200')])
-            product_id = object_product.search([('name', '=', 'PokokCicilan')])
-
-
-            date_invoice = record.periode
+            product_id = object_product.search([('name', '=', 'Produk Pokok')])
 
             invoice_line_ids = [(0, 0, {
-                'product_id': product_id.id,  # product_id dari variabel search object
-                'name': 'cicilan',
-                'quantity': 1,
-                'price_unit': record.pokok,
-                'account_id': account_id.id,
+                'product_id'    : product_id.id,  # product_id dari variabel search object_product
+                'name'          : product_id.name,
+                'quantity'      : 1,
+                'price_unit'    : record.pokok,
+                'account_id'    : account_id.id,
             })]
 
             data = {

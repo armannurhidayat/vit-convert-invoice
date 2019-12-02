@@ -29,6 +29,7 @@
         'views/templates.xml',
         'views/menu.xml',
         'data/group.xml',
+        'data/product.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

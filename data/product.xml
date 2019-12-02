@@ -1,0 +1,13 @@
+<odoo>
+	<data>
+		
+		<record id="import_product_cicilan" model="product.product">
+			<field name="name">Produk Cicilan</field>
+		</record>	
+		
+		<record id="import_product_pokok" model="product.product">
+			<field name="name">Produk Pokok</field>
+		</record>
+
+	</data>
+</odoo>
