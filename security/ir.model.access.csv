@@ -1,3 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_convert_invoice_convert_invoice,convert_invoice.convert_invoice,model_convert_invoice_convert_invoice,group_manager,1,1,1,1
-product_manager,product_manager,model_import_product,group_manager,1,1,1,1
+convert_manager,convert_manager,model_convert_invoice_convert_invoice,group_manager,1,1,1,1
